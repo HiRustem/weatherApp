@@ -1,0 +1,265 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './constants.css';
+
+html {
+  height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  background-color: var(--black);
+  background-size: cover;
+  background-repeat: none;
+
+  color: var(--white);
+
+  font-size: 20px;
+}
+
+/* Loader */
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Classes */
+
+.mainContainer {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.searchBarBefore {
+  position: absolute;
+
+  top: 50%;
+
+  width: 30%;
+  height: 4rem;
+}
+
+.searchBarAfter {
+  width: 100%;
+  height: 4rem;
+
+  margin-top: 1rem;
+}
+
+.searchBar {
+  display: flex;
+  flex-direction: row;
+}
+
+.searchBarInput {
+  width: 100%;
+  height: 100%;
+
+  padding: 1rem;
+
+  background: transparent;
+
+  border-top: 0.2rem solid var(--gray);
+  border-top-left-radius: 1rem;
+
+  border-bottom: 0.2rem solid var(--gray);
+  border-bottom-left-radius: 1rem;
+
+  border-left: 0.2rem solid var(--gray);
+
+  outline: none;
+}
+
+.searchBarButton {
+  height: 100%;
+
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  background-color: var(--gray);
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+
+  overflow: inherit;
+}
+
+/* MainInfo */
+
+.cityName {
+  font-size: 40px;
+}
+
+.temp {
+  font-size: 84px;
+}
+
+.description {
+  font-size: 30px;
+}
+
+.minAndMaxTemp {
+  font-size: 24px;
+}
+
+/* Cards */
+
+.cards {
+  width: 100%;
+  height: 100%;
+
+  place-items: center;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+
+  gap: 4rem;
+}
+
+.card {
+  width: 22rem; 
+  height: 22rem;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 1rem;
+
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 1rem;
+}
+
+.cardHeader {
+  width: 100%;
+  height: 1.9rem;
+
+  display: flex;
+  flex-direction: row;
+
+  font-size: 20px;
+
+  color: var(--gray);
+
+  align-items: center;
+}
+
+.cardNumber {
+  font-size: 80px;
+
+  margin-bottom: 4rem;
+}
+
+.cardElement {
+  margin-top: 2rem;
+}
+
+.cardDescription {
+  font-size: 26px;
+}
+
+.sunCardMainText {
+  font-size: 44px;
+}
+
+YMaps {
+  border-radius: 20px;
+}
+
+.compassCenter {
+  display: flex;
+  flex-direction: column;
+
+  width: 40%;
+  height: 50%;
+
+  border-radius: 100%;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 40px;
+
+  background-color: rgba(144, 144, 144, .1);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  backdrop-filter: blur(2rem);
+}
+
+.compassText, .pressureText {
+  font-size: 22px;
+}
+
+.pressureMainText {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.plank {
+  position: absolute;
+  display: block;
+
+  width: 4px;
+  height: 20px;
+}
+
+.disabledPlank {
+  background-color: var(--gray);
+}
+
+.activePlank {
+  background-color: var(--white);
+}
+
+/* Backgrounds */
+
+.cloudsDayBg {
+  background: rgb(144,144,144);
+  background: radial-gradient(155deg, rgba(144,144,144,1) 0%, rgba(35,35,35,1) 100%);
+}
+
+.clearDayBg {
+  background: rgb(255,255,255);
+  background: radial-gradient(150deg, rgba(255,255,255,1) 0%, rgba(149,153,255,1) 100%);
+}
